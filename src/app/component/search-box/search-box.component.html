@@ -1,0 +1,116 @@
+<section [ngClass]="{'site-banner-wrapper':searchBxSwHd===false,'list-page':searchBxSwHd===true}">
+  <div *ngIf="!searchBxSwHd else otherList"
+    class="uk-background-fixed uk-background-center-center uk-width-large uk-background-image@s" id="site-banner">
+    <ng-container *ngTemplateOutlet="listItems"></ng-container>
+  </div>
+  <ng-template #otherList>
+    <ng-container *ngTemplateOutlet="listItems"></ng-container>
+  </ng-template>
+  <!-- SEARCH-APP-WRAPPER-->
+  <ng-template #listItems>
+    <div *ngIf="!searchBxSwHd else otherList2" class="search-app-wrapper">
+      <ng-container *ngTemplateOutlet="listItems2"></ng-container>
+    </div>
+    <ng-template #otherList2>
+      <ng-container *ngTemplateOutlet="listItems2"></ng-container>
+    </ng-template>
+  </ng-template>
+  <ng-template #listItems2>
+    <div class="uk-container">
+      <div class="uk-width-1-1 pad-sm" *ngIf="!searchBxSwHd">
+        <h1 class="app-brand-name">Think 4 Buy Sale</h1>
+      </div>
+      <form [formGroup]="searchForm">
+        <div id="search-form-wrapper">
+          <div class="uk-flex-bottom uk-flex-center@m" uk-grid style="margin: 0 auto;">
+            <div class="uk-width-1-5@s pad-sm">
+              <div class="uk-margin">
+                <div class="uk-form-controls">
+                  <label class="uk-form-label">Select City</label>
+
+                  <input matInput formControlName="city" [matAutocomplete]="auto" class="uk-input uk-border-rounded"
+                    [ngClass]="{ 'is-invalid': submitted && f.city.errors }" type="text" placeholder="City">
+                  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                    <mat-option *ngIf="isLoading" class="is-loading">
+                      <mat-progress-bar [mode]="'indeterminate'">
+                      </mat-progress-bar>
+                    </mat-option>
+                    <ng-container *ngIf="!isLoading">
+                      <mat-option *ngFor="let city of filteredCity" [value]="city.city_name">
+                        {{city.city_name}}
+                      </mat-option>
+                    </ng-container>
+                  </mat-autocomplete>
+
+                  <br>
+                  <ng-container *ngIf="errorMsg">
+                    {{errorMsg}}
+                  </ng-container>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="uk-width-1-5@s pad-sm">
+              <div class="uk-margin">
+                <div class="uk-form-controls">
+                  <label class="uk-form-label">Select Locality</label>
+                  <input matInput [matAutocomplete]="autoa" formControlName="locality"
+                    class="uk-input uk-border-rounded" value="locality"
+                    [ngClass]="{ 'is-invalid': submitted && f.locality.errors }" type="text" placeholder="Locality">
+                  <mat-autocomplete #autoa="matAutocomplete" [displayWith]="displayFn">
+                    <mat-option *ngIf="isLoading" class="is-loading">
+                      <mat-progress-bar [mode]="'indeterminate'">
+                      </mat-progress-bar>
+                    </mat-option>
+                    <ng-container *ngIf="!isLoading">
+                      <mat-option *ngFor="let locality of filteredLocality" [value]="locality">
+                        {{locality}}
+                      </mat-option>
+                    </ng-container>
+                  </mat-autocomplete>
+                  <br>
+                  <ng-container *ngIf="errorMsg">
+                    {{errorMsg}}
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+
+            <div class="uk-width-2-5@s pad-sm">
+              <div class="uk-margin">
+                <label class="uk-form-label">Keyword</label>
+                <input matInput [matAutocomplete]="autow" formControlName="keyword"  id="keyword"class="uk-input uk-border-rounded"
+                  [ngClass]="{ 'is-invalid': submitted && f.keyword.errors }" value="keyword" type="text"
+                  placeholder="Keyword">
+                <mat-autocomplete #autow="matAutocomplete" [displayWith]="displayFn">
+
+                  <mat-option *ngIf="isLoading" class="is-loading">
+                    <mat-progress-bar [mode]="'indeterminate'">
+                    </mat-progress-bar>
+                  </mat-option>
+                  <ng-container *ngIf="!isLoading">
+                    <mat-option *ngFor="let keyword of filteredKeyword" [value]="keyword">
+                    {{keyword}}
+                    </mat-option>
+                  </ng-container>
+                </mat-autocomplete>
+                <br>
+                <ng-container *ngIf="errorMsg">
+                  {{errorMsg}}
+                </ng-container>
+              </div>
+            </div>
+
+            <div class="uk-width-1-5@s pad-sm search-CTA-wrapper">
+              <button class="uk-button uk-button-primary uk-border-rounded search-CTA" (click)="onSearch()">
+                <span uk-icon="icon: search"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+  <!-- SEARCH-APP-WRAPPER-END-->
+</section>

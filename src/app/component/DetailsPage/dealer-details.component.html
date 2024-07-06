@@ -1,0 +1,125 @@
+<section class="list-page-body detail-page">
+  <div class="uk-container">
+    <div class="uk-grid uk-direction-column">
+      <h2>{{dealerDetails.association_name}}</h2>
+    </div>
+    <div class="uk-grid uk-grid uk-margin-small-top">
+      <div class="uk-width-1-4@m">
+        <div class="rating" >
+          <img *ngFor="let i of arr(dealerDetails.rating | convertStringToNumber)" src="assets/images/star.svg" alt="star" width="15">
+        
+          <span>{{dealerDetails.rating}}.0</span>
+        </div>
+        <ul class="info">
+          <li><span uk-icon="receiver" class="uk-margin-small-right"></span><a
+              href="tel:{{dealerDetails.phone | formatPhoneNumber}}"><strong>{{dealerDetails.phone|formatPhoneNumber}}</strong></a>
+          </li>
+          <li><span uk-icon="user" class="uk-margin-small-right"></span>{{dealerDetails.dealer_name}}</li>
+          <li><span uk-icon="location" class="uk-margin-small-right"></span>{{dealerDetails.address}}</li>
+          <li style="color:red">{{dealerDetails.working_hours | checkWorkingHours:dealerDetails.closed_day}}</li>
+        </ul>
+        <div class="offices" (click)="showHideOffices()">
+          <strong><span uk-icon="plus-circle" class="plus-icon"></span>Working Hours</strong>
+          <ul *ngIf="showHideDealerList">
+            <li *ngFor="let totalWeek of weekArray">
+              {{totalWeek |workingHours : dealerDetails.closed_day:dealerDetails.working_hours}}</li>
+
+          </ul>
+
+        </div>
+        <a href="#modal-sections" class="contact-me" uk-toggle>Get Contact</a>
+        <div class="left-sidebar">
+          <app-also-listed [DelarId]="dealerId"></app-also-listed>
+        </div>
+        <div class="left-sidebar">
+          <strong>Modes of Payment</strong>
+          <ul>
+            <li *ngFor="let payment of splitStringToArray(dealerDetails.payment_mode)">
+              <a href="#">{{payment}}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="uk-width-expand@m">
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+          <ul class="uk-slider-items uk-grid">
+            <li class="uk-width-6" *ngFor="let image of splitStringToArray(dealerDetails.Images)">
+              <div class="uk-panel">
+                <img src="{{imageFolder+image}}" alt="">
+              </div>
+            </li>
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+            uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+            uk-slider-item="next"></a>
+        </div>
+        <div class="uk-grid uk-flex-column uk-margin-top">
+          <h2 class="uk-text-center">{{dealerDetails.association_name}}</h2>
+          <h2 class="uk-text-center"><a href="tel:+91 {{dealerDetails.phone}}"><strong>
+                {{dealerDetails.phone|formatPhoneNumber}}</strong></a></h2>
+          <div class="uk-text-center"><a href="#modal-sections" class="contact-me" uk-toggle="">Get Contact</a></div>
+          <h3 class="uk-margin-small-bottom">Review & Rating <a href="#reviewModal" uk-toggle=""
+              class="write-a-review">Write a Review</a></h3>
+          <article *ngFor="let reviewRating of pageOfItems" class="uk-comment-primary uk-padding-small custom-review"
+            style="margin-left:40px">
+            <header class="uk-comment-header uk-grid-medium" uk-grid>
+              <div class="uk-width-auto" *ngIf="reviewRating.image">
+                <img class="uk-comment-avatar rounded-circle" src={{reviewImage+reviewRating.image}} width="80"
+                  height="80" alt="">
+              </div>
+              <div class="uk-width-auto" *ngIf="!reviewRating.image">
+                <img class="uk-comment-avatar rounded-circle" src="../../../assets/images/profileImage.png" width="80"
+                  height="80" alt="">
+              </div>
+              <div class="uk-width-expand">
+                <h4 class="uk-margin-remove">{{reviewRating.name}}
+                  <span class="rating" *ngFor='let i of arr(reviewRating.rating| convertStringToNumber)'>
+                    <img src="assets/images/star.svg" alt="star" width="15">
+                  </span></h4>
+                <!-- <date>7th October, 2019</date> -->
+                <p class="uk-margin-remove">{{reviewRating.review}}</p>
+              </div>
+            </header>
+          </article>
+          <jw-pagination class="pagination" [items]="ReviewRatingList" (changePage)="onChangePage($event)">
+          </jw-pagination>
+          <!-- <ul class="uk-pagination uk-flex-center uk-margin-top" uk-margin="">
+            
+            <li class="uk-first-column"><a href="#"><span uk-pagination-previous="" class="uk-icon uk-pagination-previous"><svg width="7" height="12" viewBox="0 0 7 12" xmlns="http://www.w3.org/2000/svg" data-svg="pagination-previous"><polyline fill="none" stroke="#000" stroke-width="1.2" points="6 1 1 6 6 11"></polyline></svg></span></a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li class="uk-active"><span>7</span></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+            <li><a href="#"><span uk-pagination-next="" class="uk-icon uk-pagination-next"><svg width="7" height="12" viewBox="0 0 7 12" xmlns="http://www.w3.org/2000/svg" data-svg="pagination-next"><polyline fill="none" stroke="#000" stroke-width="1.2" points="1 1 6 6 1 11"></polyline></svg></span></a></li>
+        </ul> -->
+          <div class="uk-background-secondary uk-padding-small uk-margin-top" style="margin-left:40px;">
+            <p class="uk-h4" style="color:#fff">Business Information</p>
+          </div>
+          <h4 class="uk-margin-top">Welcome to {{dealerDetails.association_name}}</h4>
+          <h5 class="uk-margin-small-top">Location and Overview:</h5>
+          <p>{{dealerDetails.business_information}}</p>
+        </div>
+        <div class="custom-gray-bg">
+          <h4 class="uk-margin-remove-bottom">Video:</h4>
+          <a href="{{dealerDetails.video_url}}" target="_blank" class="uk-visible@s white-bg">
+            <img src="{{youTubeImg}}" alt="youtube" width="1000" class="uk-responsive-width" />
+          </a>
+        </div>
+        <div class="custom-gray-bg">
+          <h4>Location:</h4>
+          <a href="{{dealerDetails.map_url}}" target="_blank">
+            <img src="../../../assets/images/map.png" alt="map" class="uk-responsive-width" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-write-your-review [DelarId]="dealerId"></app-write-your-review>
+<app-get-contact></app-get-contact>

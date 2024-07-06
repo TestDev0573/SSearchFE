@@ -1,0 +1,50 @@
+
+          <section class="homepage-listing-wrapper uk-card uk-card-default uk-card-hover uk-padding-small">
+            <div class="uk-child-width-1-1" uk-grid>
+              <div>
+                <!-- TYPE--REAL-ESTATE-->
+                <div class="property-type type--real-estate">
+                  <h5 class="property-type-heading">Career</h5>
+                  <table>
+                    <tr>
+                      <th>Job Title</th>
+                      <th>Qualification</th>
+                      <th>Experience</th>
+                      <th>Contact Email </th>
+                      <th>Contact Phone </th>
+                      <th>Job Description </th>
+                      <th>Job Expired on </th>
+                    </tr>
+                    <tr *ngFor="let job of jobList">
+                      <td>{{job.job_title}}</td>
+                      <td>{{job.qualifications}}</td>
+                      <td>{{job.experience}}</td>
+                      <td>{{job.contact_email}}</td>
+                      <td>{{job.conatct_phone}}</td>
+                      <td>{{job.job_description}}</td>
+                      <td>{{job.job_expiry}}</td>
+                    </tr>
+                  </table>
+                </div>
+                <!-- TYPE--REAL-ESTATE-END-->
+              </div>
+            </div>
+          </section>
+          <!--HOMEPAGE-LISTING-WRAPPER-END--->
+  <style>
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+  </style>      

@@ -1,0 +1,57 @@
+<div id="modal-sections" uk-modal>
+  <div class="uk-modal-dialog">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <div class="uk-modal-body">
+          <h3 class="uk-text-center">Fill this form and get best deals</h3>
+          <div class="alert alert-success" *ngIf="submitMessage" [ngClass] ="FadeOutSuccessMsg()">
+            {{submitMessage}}
+             </div>
+             <div class='lmask' *ngIf="isLoading"></div>
+          <form  [formGroup]="getBestDealsForm" (ngSubmit)="onSubmit()">
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Your Name</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="form-stacked-text" formControlName="name" type="text" placeholder="e.g Amit keshri" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">
+                        Your Name is required and must be a valid name
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Your Mobile Number</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="form-stacked-text" formControlName="mobile"type="text"  minlength=10 maxlength=10 placeholder="e.g 9874563214" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
+                    <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                            <!-- -->
+                            <div *ngIf="f.mobile.errors.pattern || f.mobile.errors.minlength !=10">Please enter valid 10 digit mobile number.</div>
+                            </div>
+                    </div>
+                </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Your Email Id</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="form-stacked-text" formControlName="email"type="email" placeholder="e.g abc@gmail.com" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Enter a valid email address</div>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Your Message</label>
+                <div class="uk-form-controls">
+                    <textarea class="uk-textarea" rows="5" formControlName="message"placeholder="Enter Your Message" [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></textarea>
+                    <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+                        <div *ngIf="f.message.errors.required">
+                        Your message is required and must be a valid message.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="uk-button uk-button-primary" type="submit">Submit</button>
+          </form>
+      </div>        
+  </div>
+</div>

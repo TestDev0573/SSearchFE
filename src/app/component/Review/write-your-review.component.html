@@ -1,0 +1,50 @@
+<div id="reviewModal" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-body" >
+            <h3 class="uk-text-center">Write Your Review</h3>
+              <div class="alert alert-success" *ngIf="reviewStatusMessage" [ngClass] ="FadeOutSuccessMsg()">
+                 {{reviewStatusMessage}}
+                  </div>
+                <div class='lmask' *ngIf="isLoading"></div>
+            <form  [formGroup]="writeReviewForm" (ngSubmit)="submitReview()">
+              <div class="uk-margin">
+                  <label class="uk-form-label" for="form-stacked-text">Your Name</label>
+                  <div class="uk-form-controls">
+                      <input class="uk-input" id="form-stacked-text" formControlName='name' type="text" placeholder="Full Name">
+                  </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Image</label>
+                <div class="uk-form-controls">
+                    <input type="file" name="selectFile" id="selectFile" (change)="onFileSelected($event)">
+                    <!-- <input class="uk-input" id="form-stacked-text" formControlName="name" type="text" placeholder="Full Name"> -->
+                </div>
+            </div>
+              <div class="uk-margin">
+                  <label class="uk-form-label" for="form-stacked-text">Your Rating</label>
+                  <div class="uk-form-controls custom-ratings">
+                      <input class="uk-input" id="form-stacked-text" type="text">
+                      <div class="rating"> 
+                        <input type="radio" id="star5" formControlName='rating' name="rating" value="5">
+                        <label class="full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="star4"  formControlName='rating' name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>                        
+                        <input type="radio" id="star3"  formControlName='rating' name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>                        
+                        <input type="radio" id="star2" formControlName='rating' name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>                        
+                        <input type="radio" id="star1" formControlName='rating' name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                      </div>
+                  </div>
+              </div>
+              <div class="uk-margin">
+                  <label class="uk-form-label" for="form-stacked-text">Your Message</label>
+                  <div class="uk-form-controls">
+                      <textarea class="uk-textarea"  formControlName='message'rows="5" placeholder="Enter Your Message"></textarea>
+                  </div>
+              </div>
+              <button class="uk-button uk-button-primary" type="submit">Submit</button>
+              
+            </form>
+        </div>        
+    </div>
+</div>
+

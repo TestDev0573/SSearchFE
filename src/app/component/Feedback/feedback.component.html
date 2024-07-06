@@ -1,0 +1,98 @@
+<section class="homepage-listing-wrapper uk-card uk-card-default uk-card-hover uk-padding-small">
+    <div class="uk-child-width-1-1" uk-grid>
+        <div class="uk-container-small uk-margin-auto">
+            <div class="page-card-wrapper">
+                <div class="uk-card uk-card-default uk-card-hover uk-border-rounded">
+                    <div class="uk-card-media-top uk-text-center">
+                        <img src="assets/images/checklist.svg" class="uk-margin-top" width="120">
+                    </div>
+                    <!-- TYPE--REAL-ESTATE-->
+                    <div class="uk-card-body">
+                        <div class="property-type type--real-estate">
+                            <h5 class="property-type-heading">Post issue</h5>
+                            <p>Your feedback will help us improve </p>
+                            <div class="alert alert-success" *ngIf="submitMessage" [ngClass] ="FadeOutSuccessMsg()">
+                                {{submitMessage}}
+                                 </div>
+                            <div class="footer-contact-us-wrapper">
+                                <form class="footer-contact-form" [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+                                    <div class="uk-margin">
+                                        <!-- <div class="uk-form-controls inline-div-first">
+                                            <input class="uk-input uk-border-rounded" id=""
+                                                formControlName="companyName" type="text"
+                                                [ngClass]="{ 'is-invalid': submitted && f.companyName.errors }"
+                                                placeholder="Company Name" autofocus>
+                                            <div *ngIf="submitted && f.companyName.errors" class="invalid-feedback">
+                                                <div *ngIf="f.companyName.errors.required">Company Name is required
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="uk-form-controls inline-div-first">
+                                            <input class="uk-input uk-border-rounded" id="" formControlName="fullName"
+                                                type="tel" [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }"
+                                                placeholder="Your Name">
+                                            <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
+                                                <div *ngIf="f.fullName.errors.required">Your Name Name is required</div>
+                                            </div>
+                                        </div>
+                                        <div class="uk-form-controls inline-div-second">
+                                            <input class="uk-input uk-border-rounded" formControlName="city" id=""
+                                                type="text" [ngClass]="{ 'is-invalid': submitted && f.city.errors }"
+                                                placeholder="City" value="Delhi" autofocus>
+                                            <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                                <div *ngIf="f.city.errors.required">City is Required.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="uk-margin">
+                                        
+                                        <!-- <div class="uk-form-controls inline-div-second">
+                                            <input class="uk-input uk-border-rounded" formControlName="locality" id=""
+                                                type="text" [ngClass]="{ 'is-invalid': submitted && f.locality.errors }"
+                                                placeholder="Locality" value="Delhi" autofocus>
+                                            <div *ngIf="submitted && f.locality.errors" class="invalid-feedback">
+                                                <div *ngIf="f.locality.errors.required">Locality is Required.</div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="uk-margin">
+                                        <div class="uk-form-controls inline-div-first">
+                                            <input class="uk-input uk-border-rounded" formControlName="email" id=""
+                                                type="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                                                placeholder="Email">
+                                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                                <div *ngIf="f.email.errors.email">Email must be a valid email address
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="uk-form-controls inline-div-second">
+                                            <input class="uk-input uk-border-rounded" id="" type="text"
+                                            [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.errors }" formControlName="mobileNumber" maxlength="10"
+                                                (keypress)=_keyPress($event) placeholder="Phone">
+                                            <div *ngIf="submitted && f.mobileNumber.errors" class="invalid-feedback">
+                                                <div *ngIf="f.mobileNumber.errors.required">Mobile number is required
+                                                </div>
+                                                <div *ngIf="feedbackForm.get('mobileNumber').hasError('pattern')">It
+                                                    is not a valid mobile number.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="uk-margin">
+                                        <textarea class="uk-textarea uk-border-rounded" rows="3" formControlName="message"
+                                            placeholder="Message"></textarea>
+                                    </div>
+                                    <button class="uk-button uk-button-primary uk-border-rounded">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- TYPE--REAL-ESTATE-END-->
+            </div>
+        </div>
+    </div>
+</section>
+<!--HOMEPAGE-LISTING-WRAPPER-END--->

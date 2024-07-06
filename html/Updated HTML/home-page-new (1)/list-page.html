@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Think4 Buy Sale | Homepage</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- GOOGLE-FONTS-->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:300,400,500,600,700,800&display=swap"
+    rel="stylesheet">
+
+  <!-- UI-KIT-CSS-->
+  <link rel="stylesheet" href="assets/css/uikit.css" />
+
+  <!-- SITE-CSS-->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- FAVICON-->
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/images/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- UI-KIT-JS-->
+  <script src="assets/js/uikit.min.js"></script>
+  <script src="assets/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+  <!-- HEADER-->
+  <header id="header">
+    <div class="uk-hidden@s">
+      <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky;" class="uk-offcanvas-content">
+        <!-- MOBILE-MENU-->
+        <nav class="uk-navbar-container" uk-navbar>
+          <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="" uk-toggle="target: #offcanvas-nav"></a>
+          </div>
+          <div class="uk-navbar-right">
+            <a class="uk-navbar-toggle" href="javascript:void(0)">
+              <span class="uk-icon" uk-icon="icon: bell"></span>
+            </a>
+          </div>
+          <div id="offcanvas-nav" uk-offcanvas="flip: false; overlay: true; esc-close: true;">
+            <div class="uk-offcanvas-bar" id="off-canvas-menu">
+              <button class="uk-offcanvas-close" type="button" uk-close></button>
+              <ul class="uk-nav uk-nav-default" id="nav">
+                <li class="uk-nav-header uk-active"><a href="index.html">Home</a></li>
+                <li class="uk-nav-header"><a href="#">About Us</a></li>
+
+                <li class="uk-nav-header"><a href="#">Quick Enquiry</a></li>
+                <li class="uk-nav-header"><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- END-OF-MOBILE-MENU-->
+      </div>
+
+  </header>
+  <!-- HEADER-END-->
+  <!-- MAIN-->
+  <main id="main">
+    <!-- LIST HEADER -->
+      <section class="list-page"> 
+        <div class="uk-container">
+              <div class="uk-flex-bottom uk-flex-center@m" uk-grid style="margin:0 auto">
+                <div class="uk-width-1-5@s pad-sm">
+                  <div class="uk-margin">
+                    <div class="uk-form-controls">
+                      <label class="uk-form-label">Select City</label>
+                      <select class="uk-select uk-border-rounded" id="" placeholder="Choose" autofocus>
+                        <option selected>Choose</option>
+                        <option value="">Option 01</option>
+                        <option value="">Option 02</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="uk-width-1-5@s pad-sm">
+                  <div class="uk-margin">
+                    <div class="uk-form-controls">
+                      <label class="uk-form-label">Select Locality</label>
+                      <select class="uk-select uk-border-rounded" id="" placeholder="Choose">
+                        <option selected>Choose</option>
+                        <option value="">Option 01</option>
+                        <option value="">Option 02</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="uk-width-2-5@s pad-sm">
+                  <div class="uk-margin">
+                    <label class="uk-form-label">Keyword</label>
+                    <input class="uk-input uk-border-rounded" type="text" placeholder="Enter Keyword">
+                  </div>
+                </div>
+
+                <div class="uk-width-1-5@s pad-sm search-CTA-wrapper">
+                  <button class="uk-button uk-button-primary uk-border-rounded search-CTA">
+                    <span uk-icon="icon: search"></span>
+                  </button>
+                </div>
+              </div>
+        </div>
+      </section>
+    <!-- LIST HEADER END-->
+
+    <!-- LIST BODY -->
+      <section class="list-page-body">
+        <div class="uk-container">
+          <div class="uk-grid">
+            <div class="uk-width-1-4@m">
+              <div class="left-sidebar">
+                <strong>Die Makers</strong>
+                <ul>
+                  <li><a href="#">Glass Dealers near me</a></li>
+                  <li><a href="#">Glass Dealers near me</a></li>
+                  <li><a href="#">Glass Dealers near me</a></li>
+                  <li><a href="#">Glass Dealers near me</a></li>
+                  <li><a href="#">Glass Dealers near me</a></li>
+                  <li><a href="#">Glass Dealers near me</a></li>
+                  <li><a href="#">Glass Dealers near me</a></li>
+                  <li><a href="#">Glass Dealers near me</a></li>
+                  <li><a href="#">Glass Dealers near me</a></li>
+                  <li><a href="#">Glass Dealers near me</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="uk-width-expand@m">
+                <div class="right-sidebar">
+                  <div class="uk-child-width-1-3" uk-grid>
+                    <div class="" uk-grid>
+                      <div class="uk-text-left">
+                        <a href="#"><img src="assets/images/list-image.jpg" alt="list" class="list-image"></a>
+                      </div>
+                    </div>
+                    <div class="uk-child-width-1" style="width:50%">
+                      <h3 class="heading"><a href='#'>Harsh Laser Die</a></h3>
+                      <div class="rating">
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <span>5.0</span>
+                      </div>
+                      <ul class="info">
+                        <li><a href='tel:+91 95-8745-6998'>+91 95-8745-6998</a></li>
+                        <li>Mayur Vihar</li>
+                        <li>Open at 9:00 am on Mon</li>
+                      </ul>
+                    </div>
+                    <div class="uk-child-width-1" style="width:20%">
+                      <a href='#' class="contact-me">Get Contact</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="right-sidebar">
+                  <div class="uk-child-width-1-3" uk-grid>
+                    <div class="" uk-grid>
+                      <div class="uk-text-left">
+                        <a href="#"><img src="assets/images/list-image.jpg" alt="list" class="list-image"></a>
+                      </div>
+                    </div>
+                    <div class="uk-child-width-1" style="width:50%">
+                      <h3 class="heading"><a href='#'>Harsh Laser Die</a></h3>
+                      <div class="rating">
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <span>5.0</span>
+                      </div>
+                      <ul class="info">
+                        <li><a href='tel:+91 95-8745-6998'>+91 95-8745-6998</a></li>
+                        <li>Mayur Vihar</li>
+                        <li>Open at 9:00 am on Mon</li>
+                      </ul>
+                    </div>
+                    <div class="uk-child-width-1" style="width:20%">
+                      <a href='#' class="contact-me">Get Contact</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="right-sidebar">
+                  <div class="uk-child-width-1-3" uk-grid>
+                    <div class="" uk-grid>
+                      <div class="uk-text-left">
+                        <a href="#"><img src="assets/images/list-image.jpg" alt="list" class="list-image"></a>
+                      </div>
+                    </div>
+                    <div class="uk-child-width-1" style="width:50%">
+                      <h3 class="heading"><a href='#'>Harsh Laser Die</a></h3>
+                      <div class="rating">
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <img src="assets/images/star.svg" alt='star' width='15'>
+                        <span>5.0</span>
+                      </div>
+                      <ul class="info">
+                        <li><a href='tel:+91 95-8745-6998'>+91 95-8745-6998</a></li>
+                        <li>Mayur Vihar</li>
+                        <li>Open at 9:00 am on Mon</li>
+                      </ul>
+                    </div>
+                    <div class="uk-child-width-1" style="width:20%">
+                      <a href='#' class="contact-me">Get Contact</a>
+                    </div>
+                  </div>
+                </div>
+                <ul class="uk-pagination uk-flex-center" uk-margin>
+                    <li><a href="#"><span uk-pagination-previous></span></a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li class="uk-active"><span>7</span></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">10</a></li>
+                    <li><a href="#"><span uk-pagination-next></span></a></li>
+                </ul>
+            </div>
+          </div>
+          <div class="uk-grid uk-flex-column">
+            <h4>Welcome Properties in New Ashok Nagar, Delhi</h4>
+            <p>Welcome Properties in Delhi. Offices On Hire with Address, Contact Number, Photos, Maps. View Welcome Properties, Delhi on Justdial.</p>
+            <h5 class="uk-margin-small-top">Location and Overview:</h5>
+            <p>Welcome Properties in New Ashok Nagar, Delhi is a top player in the category Offices On Hire in the Delhi. This well-known establishment acts as a one-stop destination servicing customers both local and from other parts of Delhi. Over the course of its journey, this business has established a firm foothold in it’s industry. The belief that customer satisfaction is as important as their products and services, have helped this establishment garner a vast base of customers, which continues to grow by the day. This business employs individuals that are dedicated towards their respective roles and put in a lot of effort to achieve the common vision and larger goals of the company. In the near future, this business aims to expand its line of products and services and cater to a larger client base. In Delhi, this establishment occupies a prominent location in New Ashok Nagar. It is an effortless task in commuting to this establishment as there are various modes of transport readily available. It is at Main road, New Ashok Nagar metro pillar number -163, which makes it easy for first-time visitors in locating this establishment. It is known to provide top service in the following categories: Offices On Hire, Estate Agents, Estate Agents For Residential Rental, Paying Guest Accommodations For Women, Paying Guest Accommodations For Men, Paying Guest Accommodations, Estate Agents For Commercial Rental, Estate Agents For Residence.</p>
+            <h4 class="uk-margin-small-top">Welcome Properties in New Ashok Nagar, Delhi</h4>
+            <p>Welcome Properties in Delhi. Offices On Hire with Address, Contact Number, Photos, Maps. View Welcome Properties, Delhi on Justdial.</p>
+            <h5 class="uk-margin-small-top">Location and Overview:</h5>
+            <p>Welcome Properties in New Ashok Nagar, Delhi is a top player in the category Offices On Hire in the Delhi. This well-known establishment acts as a one-stop destination servicing customers both local and from other parts of Delhi. Over the course of its journey, this business has established a firm foothold in it’s industry. The belief that customer satisfaction is as important as their products and services, have helped this establishment garner a vast base of customers, which continues to grow by the day. This business employs individuals that are dedicated towards their respective roles and put in a lot of effort to achieve the common vision and larger goals of the company. In the near future, this business aims to expand its line of products and services and cater to a larger client base. In Delhi, this establishment occupies a prominent location in New Ashok Nagar. It is an effortless task in commuting to this establishment as there are various modes of transport readily available. It is at Main road, New Ashok Nagar metro pillar number -163, which makes it easy for first-time visitors in locating this establishment. It is known to provide top service in the following categories: Offices On Hire, Estate Agents, Estate Agents For Residential Rental, Paying Guest Accommodations For Women, Paying Guest Accommodations For Men, Paying Guest Accommodations, Estate Agents For Commercial Rental, Estate Agents For Residence.</p>
+          </div>
+        </div>
+      </section>
+    <!-- LIST BODY END-->
+
+  </main>
+  <!-- MAIN-END-->
+
+  <!-- FESTIVAL-NEW-OFFERS-SECTION-->
+  <div class="festival-offer-sliding-marquee" style="display: none;">
+    <marquee class="marquee" behavior="scroll" direction="left" onMouseOver="this.stop()" onMouseOut="this.start()">
+      <div class="marquee-inner-content">
+        <p><img src="https://media3.giphy.com/media/LGKbowo3yqmbe/giphy.gif" alt=""> Happy Diwali to all you. Now
+          get extra 20%+20% discounts on hot properties. Now get extra 20%+20% discounts on hot properties. Now
+          get
+          extra 20%+20% discounts on hot properties.</p>
+      </div>
+    </marquee>
+  </div>
+  <!-- FESTIVAL-NEW-OFFERS-SECTION-END-->
+
+  <!-- FOOTER-->
+  <footer id="footer">
+    <div class="uk-container">
+      <p class="footer-txt uk-visible@m">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+        fugiat nulla pariatur.</p>
+      <hr class="uk-visible@m">
+      <div class="" uk-grid>
+        <div class="uk-width-1-1@s uk-width-expand@m">
+          <h5 class="footer-nav-heading">Quick Links</h5>
+          <div class="uk-child-width-1-2" uk-grid>
+            <div class="">
+              <ul class="uk-list footer-nav-link">
+                <li>
+                  <a href="javascript:void(0)" class="site-small-link">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: chevron-double-right"></span>About Us</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="site-small-link">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: chevron-double-right"></span>FAQ</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="site-small-link">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: chevron-double-right"></span>Events</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="site-small-link">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: chevron-double-right"></span>Blog</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul class="uk-list footer-nav-link">
+                <li>
+                  <a href="javascript:void(0)" class="site-small-link">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: chevron-double-right"></span>Services</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="site-small-link">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: chevron-double-right"></span>Gallery </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="site-small-link">
+                    <span class="uk-icon uk-margin-small-right"
+                      uk-icon="icon: chevron-double-right"></span>Testimonials</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="site-small-link">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: chevron-double-right"></span>Contact
+                    Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div class="uk-width-1-1@s uk-flex-first@m uk-width-auto@m uk-margin-large-right">
+          <h5 class="footer-nav-heading">Get in Touch</h5>
+          <ul class="uk-list footer-nav-link">
+            <li>
+              <a href="javascript:void(0)" class="site-small-link">
+                <span class="uk-icon uk-margin-small-right" uk-icon="icon: chevron-double-right"></span>Groups</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="site-small-link">
+                <span class="uk-icon uk-margin-small-right" uk-icon="icon: chevron-double-right"></span>Agents</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="site-small-link">
+                <span class="uk-icon uk-margin-small-right" uk-icon="icon: chevron-double-right"></span>Guide</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="site-small-link">
+                <span class="uk-icon uk-margin-small-right" uk-icon="icon: chevron-double-right"></span>News</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="site-small-link">
+                <span class="uk-icon uk-margin-small-right" uk-icon="icon: chevron-double-right"></span>Forum</a>
+            </li>
+          </ul>
+
+          <div class="">
+            <a href="post-free-listing.html" class="uk-button uk-button-orange uk-border-rounded uk-margin-top">Post
+              Free
+              Listing</a>
+          </div>
+
+        </div>
+
+        <div class="uk-width-1-1@s uk-width-expand@m uk-flex-last@m">
+          <div>
+            <img src="assets/images/logo.png" alt="">
+          </div>
+
+          <div class="keep-in-touch-wrapper">
+            <h6 style="font-size: 16px; color: #fff; text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);">Keep in Touch</h6>
+            <ul class="keep-in-touch-list">
+              <li>
+                <a href="javascript:void(0)"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"><i class="fa fa-youtube"></i></a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"><i class="fa fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <p class="copyrights-txt">Copyright &copy; 2017-19 Think 4 Buy Sale. All rights reserved</p>
+        </div>
+
+      </div>
+  </footer>
+  <!-- FOOTER-END-->
+</body>
+
+</html>

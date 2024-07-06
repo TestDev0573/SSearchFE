@@ -3,8 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiEndpoint: 'http://localhost:81/satish_project/BUY_AND_SELL/b_s_demo/api/BuySaleApi/',
+  listImagesFolder: 'http://localhost:81/satish_project/BUY_AND_SELL/b_s_demo/uploads/images/thumbnail/',
+  reviewUserImage: 'http://localhost:81/satish_project/BUY_AND_SELL/b_s_demo/uploads/images/reviewImages/thumbnail/',
+  weekArray:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

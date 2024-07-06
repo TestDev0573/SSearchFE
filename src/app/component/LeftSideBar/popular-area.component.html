@@ -1,0 +1,7 @@
+<div class="left-sidebar">
+    <strong>{{popularAreaProps.popularArea}}</strong>
+    <ul>
+        <li *ngFor="let popularAreaLink  of popularAreaLink">
+            <a routerLink="/{{popularAreaLink.link_string}}" routerLinkActive="active">{{popularAreaProps.popularArea}} in {{popularAreaLink.locality_name}} </a></li>
+    </ul>
+</div>
